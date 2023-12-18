@@ -1,6 +1,7 @@
 package course;
 
 import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.restassured.response.Response;
 import org.example.config.BaseTest;
 import org.example.model.RatingModel;
@@ -8,12 +9,13 @@ import org.example.model.Role;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-@Epic("")
+@Epic("Get Rating by role person")
 public class RatingRoleTests extends BaseTest {
 
-    @Test()
-    public void raitingRoleExplorer (){
-        int personId =1;
+    @Test(testName = "testRatingRoleExplorer")
+    @Feature("Получение рейтинга пользователя по роли")
+    public void ratingRoleExplorer (){
+        int personId = 1;
         login(Role.EXPLORER, "user", "user");
         Response response = RATING_EXPLORER_STEPS.getRatingRoleExplorer(accessToken, 200, personId );
 //        String quest=response.getBody().toString();
@@ -21,8 +23,8 @@ public class RatingRoleTests extends BaseTest {
                 .withRating(1.0));
     }
 
-    @Test()
-    public void raitingRoleKeeper (){
+    @Test(testName = "testRatingRoleKeeper")
+    public void ratingRoleKeeper (){
         int personId =1;
         login(Role.KEEPER, "user", "user");
         Response response = RATING_KEEPER_STEPS.getRatingRoleKeeper(accessToken, 200, personId );
