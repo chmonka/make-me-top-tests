@@ -7,4 +7,8 @@ public interface Steps {
     StepRating RATING_EXPLORER_STEPS =new StepRating();
     StepRating RATING_KEEPER_STEPS =new StepRating();
 
+    StepRefreshCourseTheme REFRESH_COURSE_THEME = new StepRefreshCourseTheme();
+
+    StepRefreshCourse REFRESH_COURSE = new StepRefreshCourse();
+
 }

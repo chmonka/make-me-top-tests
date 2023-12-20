@@ -14,6 +14,7 @@ public class AuthSteps {
     @Step
     public Response sendLoginRequest(UserModel user) {
         return given().spec(specificationRequest())
+                .when().log().all()
                 .body(user)
                 .post("/auth/login")
                 .then()
@@ -25,6 +26,7 @@ public class AuthSteps {
     @Step
     public Response sendLogOutRequest(String token) {
         return given().spec(specificationRequest())
+                .when().log().all()
                 .body(token)
                 .post("/auth/logout")
                 .then()

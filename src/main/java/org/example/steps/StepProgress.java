@@ -11,6 +11,7 @@ public class StepProgress {
     @Step
     public Response getProgressByGalaxy(String token,Integer statusCode,Integer galaxyId){
         return given()
+                .when().log().all()
                 .spec(specificationRequest())
                 .header("Authorization", "Bearer " + token)
                 .pathParam("galaxyId", galaxyId)

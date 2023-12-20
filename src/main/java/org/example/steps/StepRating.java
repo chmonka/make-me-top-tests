@@ -11,6 +11,7 @@ public class StepRating {
     @Step
     public Response getRatingRoleExplorer (String token,Integer statusCode, Integer personId){
         return given()
+                .when().log().all()
                 .spec(specificationRequest())
                 .header("Authorization", "Bearer " + token)
                 .pathParam("personId", personId)
@@ -24,6 +25,7 @@ public class StepRating {
     @Step
     public Response getRatingRoleKeeper (String token,Integer statusCode, Integer personId){
         return given()
+                .when().log().all()
                 .spec(specificationRequest())
                 .header("Authorization", "Bearer " + token)
                 .pathParam("personId", personId)

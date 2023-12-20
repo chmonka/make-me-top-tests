@@ -18,7 +18,6 @@ public class RatingRoleTests extends BaseTest {
         int personId = 1;
         login(Role.EXPLORER, "user", "user");
         Response response = RATING_EXPLORER_STEPS.getRatingRoleExplorer(accessToken, 200, personId );
-//        String quest=response.getBody().toString();
         Assert.assertEquals(response.getBody().as(RatingModel.class), new RatingModel()
                 .withRating(1.0));
     }
@@ -28,7 +27,6 @@ public class RatingRoleTests extends BaseTest {
         int personId =1;
         login(Role.KEEPER, "user", "user");
         Response response = RATING_KEEPER_STEPS.getRatingRoleKeeper(accessToken, 200, personId );
-//        String quest=response.getBody().toString();
         Assert.assertEquals(response.getBody().as(RatingModel.class), new RatingModel()
                 .withRating(0.0));
     }
