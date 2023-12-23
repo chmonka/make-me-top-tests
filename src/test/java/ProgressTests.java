@@ -1,5 +1,3 @@
-package course;
-
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.restassured.response.Response;
@@ -18,7 +16,7 @@ public class ProgressTests extends BaseTest {
     @Feature("Получение прогресса пользователя")
     public void getProgressByGalaxy() {
         int galaxyid = 1;
-        List<Integer> openedSystems = List.of(1, 6, 7, 8, 9, 11, 12, 15, 16);
+        List<Integer> openedSystems = List.of(6, 7, 8, 9, 1, 11, 12, 15, 16);
         List<Integer> closedSystem = List.of( 13, 14, 17, 18, 19, 20, 21, 22, 23, 24);
         List<StudySystem> studiedSystems = List.of(
                 new StudySystem().withSystemId(2).withProgress(100),

@@ -1,5 +1,3 @@
-package course;
-
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.restassured.response.Response;

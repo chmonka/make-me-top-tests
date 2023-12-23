@@ -1,5 +1,3 @@
-package course;
-
 import io.restassured.response.Response;
 import org.example.config.BaseTest;
 import org.example.model.RefreshCourse;

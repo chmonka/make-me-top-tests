@@ -1,5 +1,3 @@
-package course;
-
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.restassured.response.Response;
@@ -21,12 +19,12 @@ public class CoursesTests extends BaseTest {
     @Feature("Get courses")
     @Test(description = "Получение курса по Id")
     public void getCourseById(){
-        int courseId = 1;
+        int courseId = 2;
         login(Role.EXPLORER,"user","user");
         Response response = COURSE_STEPS.getCourseById(accessToken,200,courseId);
         Assert.assertEquals(response.getBody().as(CourseModel.class),new CourseModel()
-                .withCourseId(1)
-                .withTitle("Groovy")
+                .withCourseId(2)
+                .withTitle("JS")
                 .withCreationDate(date.format(formatter))
                 .withLastModified(date.format(formatter))
                 .withDescription(""));
